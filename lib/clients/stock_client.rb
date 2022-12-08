@@ -6,12 +6,25 @@
 module Clients
   class StockClient
     STOCKS = {
-      "AAPL": 45.2,
-      "GOOG": 199.5,
-      "MSFT": 285
+      "AAPL": {
+        price: 2912.32,
+        company_name: "Apple Inc"
+      },
+      "GOOG": {
+        price: 239.92,
+        company_name: "Google Corporation",
+      },
+      "MSFT": {
+        price: 11239.92,
+        company_name: "Microsoft Corporation",
+      },
     }
     def price(stock)
-      STOCKS[stock.to_sym]
+      STOCKS[stock.to_sym][:price]
+    end
+
+    def company_name(stock)
+      STOCKS[stock.to_sym][:company_name]
     end
   end
 end
