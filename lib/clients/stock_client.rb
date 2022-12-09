@@ -20,11 +20,21 @@ module Clients
       },
     }
     def price(stock)
-      STOCKS[stock.to_sym][:price]
+      stock = STOCKS[stock.to_sym]
+      if stock 
+        stock[:price]
+      else 
+        raise "No stock with such symbol"
+      end
     end
 
     def company_name(stock)
-      STOCKS[stock.to_sym][:company_name]
+      stock = STOCKS[stock.to_sym]
+      if stock
+        stock[:company_name]
+      else 
+        raise "No stock with such symbol"
+      end
     end
   end
 end
